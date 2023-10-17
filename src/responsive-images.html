@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive images</title>
+  </head>
+  <body class="responsive-images">
+    <picture>
+      <source
+        media="(min-width: 1440px) and (max-width: 1920px)"
+        srcset="images/responsive-images/1440.png"
+      />
+      <source
+        media="(min-width: 768px) and (max-width: 1440px)"
+        srcset="images/responsive-images/768.png"
+      />
+      <source
+        media="(min-width: 480px) and (max-width: 768px)"
+        srcset="images/responsive-images/480.png"
+      />
+      <source
+        media="(max-width: 480px)"
+        srcset="images/responsive-images/320.png"
+      />
+      <img
+        src="images/responsive-images/1920.png"
+        alt="пример работы адаптивного изображения"
+      />
+    </picture>
+    <!-- <img
+      src="images/responsive-images/1920.png"
+      alt="пример работы адаптивного изображения"
+      sizes="
+      (min-width: 2880px) 1440px,
+      (min-width: 1920px) 960px,
+      (min-width: 1440px) 720px,
+      (min-width: 1141px) 570px
+      "
+      srcset="
+        images/responsive-images/1920.png 1920w,
+        images/responsive-images/1440.png 1440w,
+        images/responsive-images/1140.png 1140w,
+        images/responsive-images/768.png   768w,
+        images/responsive-images/480.png   480w,
+        images/responsive-images/320.png   320w
+      "
+    /> -->
+    <div>
+      <h1>Как работают адаптивные изображения?</h1>
+      <p>
+        <span
+          >Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam cum
+          repellat dolores? Aperiam quidem tempore eveniet harum, eius quisquam
+          aliquam officia illo nulla voluptatem laboriosam blanditiis cupiditate
+          doloremque praesentium nihil.</span
+        ><span
+          >Harum fuga nulla blanditiis, cumque repellat quam exercitationem modi
+          suscipit nisi. Numquam quia ut aperiam alias, earum minus possimus,
+          est asperiores impedit voluptates quod optio provident officiis hic
+          illum autem.</span
+        ><span
+          >Omnis laudantium perspiciatis deserunt tempora vel voluptatum?
+          Voluptatum dolore, repellat tenetur debitis obcaecati aspernatur odit
+          accusamus, quo ea porro vitae mollitia, corrupti quis. Laborum
+          obcaecati debitis hic, asperiores vitae illum.</span
+        ><span
+          >Veritatis aut at officia fugiat necessitatibus minus eius dolore iure
+          optio, quaerat, tenetur architecto quibusdam accusamus tempore dicta
+          voluptas, ea quod. Alias unde libero soluta, explicabo odio
+          exercitationem quia aperiam.</span
+        ><span
+          >Repellat molestias pariatur veritatis eos debitis esse vero, soluta
+          dolorem totam delectus dicta provident quisquam expedita sit
+          reiciendis officiis fugit! Quasi cumque ipsum autem corrupti ipsa
+          voluptatum odio est ullam!</span
+        >
+      </p>
+    </div>
+  </body>
+</html>
