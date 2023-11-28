@@ -2,7 +2,7 @@
   "name": "static-site-08",
   "version": "0.1.0",
   "author": "Anna Komkova",
-  "license": "false",
+  "license": "MIT",
   "scripts": {
     "start": "webpack serve --open --config webpack.dev.js",
     "watch": "webpack --config webpack.dev.js",

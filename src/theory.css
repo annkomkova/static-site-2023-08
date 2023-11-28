@@ -1,0 +1,47 @@
+/* body {
+  background-color: aqua;
+} */
+.icon:nth-child(1) svg:hover g path:first-of-type {
+  fill: #2aabee;
+}
+.icon:nth-child(2) svg:hover g path:first-of-type {
+  fill: #0077ff;
+}
+.icon:nth-child(3) svg:hover path:first-of-type {
+  fill: #ff0302;
+}
+
+div.test {
+  color: green;
+  border: 2px solid currentColor;
+  padding: 20px;
+}
+.test ~ p {
+  color: palevioletred;
+}
+.btn {
+  border: 2px solid currentColor;
+  border-radius: 10px;
+  padding: 10px 14px;
+  color: #888;
+  background: transparent;
+  margin: 20px 0;
+  width: 80px;
+}
+
+.btn:hover {
+  color: red;
+}
+
+.rect {
+  width: calc(100vw - 40px);
+  margin: 0 auto;
+  height: 200px;
+  background: goldenrod;
+}
+.rect2 {
+  height: calc((90vw - 40px) / 16 * 9);
+  width: calc(90vw - 40px);
+  margin: 0 auto;
+  background: rosybrown;
+}
