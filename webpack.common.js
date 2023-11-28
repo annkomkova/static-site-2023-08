@@ -84,6 +84,15 @@ module.exports = {
     ],
   },
   plugins: [
+    // new CopyPlugin({
+    //   patterns: [
+    //     {
+    //       from: path.resolve(__dirname, "src/share/"),
+    //       to: path.resolve(__dirname, "dev_build/share"),
+    //     },
+    //   ],
+    // }),
+
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash].css",
       chunkFilename: "[id].[contenthash].css",
