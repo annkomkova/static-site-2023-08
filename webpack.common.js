@@ -2,6 +2,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const HtmlWebpackPartialsPlugin = require("html-webpack-partials-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 const webpack = require("webpack");
 const path = require("path");
@@ -11,6 +12,8 @@ module.exports = {
     index: "./src/index.js",
     theory: "./src/theory.js",
     adaptive: "./src/adaptive.js",
+    slider: "./src/slider.js",
+    dictionary: "./src/dictionary.js",
   },
   output: {
     filename: "[name].[contenthash].js",
@@ -84,18 +87,40 @@ module.exports = {
     ],
   },
   plugins: [
-    // new CopyPlugin({
-    //   patterns: [
-    //     {
-    //       from: path.resolve(__dirname, "src/share/"),
-    //       to: path.resolve(__dirname, "dev_build/share"),
-    //     },
-    //   ],
-    // }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "src/share/"),
+          to: path.resolve(__dirname, "dev_build/share"),
+        },
+      ],
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "src/share/"),
+          to: path.resolve(__dirname, "docs/share"),
+        },
+      ],
+    }),
 
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash].css",
       chunkFilename: "[id].[contenthash].css",
+    }),
+
+    //Chunk dictionary
+    new HtmlWebpackPlugin({
+      template: "./src/dictionary.html",
+      filename: "./dictionary.html",
+      chunks: ["dictionary"],
+    }),
+
+    //Chunk slider
+    new HtmlWebpackPlugin({
+      template: "./src/slider.html",
+      filename: "./slider.html",
+      chunks: ["slider"],
     }),
 
     //Chunk theory

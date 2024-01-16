@@ -1,0 +1,88 @@
+.A_Title {
+  height: 18px;
+  font-family: "ADC";
+  font-size: 10px;
+  line-height: 14px;
+  color: var(--white);
+  text-transform: uppercase;
+  padding-top: 4px;
+}
+.A_answerMessage {
+  font-size: 15px;
+  font-weight: normal;
+  background-color: var(--white);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+.A_Question {
+  padding: 12px 18px;
+  border-radius: 8px;
+  background-color: var(--all_black);
+  color: var(--acid_green);
+  font-size: 22px;
+  font-weight: 400;
+}
+.A_ADCUser {
+  display: flex;
+  align-items: center;
+  column-gap: 6px;
+
+  &::before {
+    content: "";
+    width: 28px;
+    height: 28px;
+    background-image: url("./images/dictionary/Q_ADCSymbol.svg");
+  }
+  &::after {
+    content: "";
+    width: 36px;
+    height: 24px;
+    border-radius: 8px;
+    background-color: white;
+    background-image: url("./images/dictionary/Q_ADCUserTextingIcon.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.O_Story {
+  position: relative;
+  display: flex;
+  width: 320px;
+  height: 568px;
+  padding: 52px 10px 22px 10px;
+  flex-direction: column;
+  justify-content: flex-end;
+  // background-color: var(--black);
+  border-radius: 8px;
+  overflow: hidden;
+
+  .A_Title {
+    position: absolute;
+    left: 44px;
+    top: 52px;
+  }
+
+  .A_Question {
+    max-width: 70%;
+    width: fit-content;
+    align-self: flex-end;
+  }
+
+  .C_answerMessages {
+    margin-left: 34px;
+    margin-bottom: 10px;
+    width: 218px;
+
+    .A_answerMessage {
+      margin-top: 10px;
+    }
+  }
+}
+.S_Stories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 1000px;
+  margin: 0 auto;
+}
