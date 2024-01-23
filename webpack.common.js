@@ -14,6 +14,7 @@ module.exports = {
     adaptive: "./src/adaptive.js",
     slider: "./src/slider.js",
     dictionary: "./src/dictionary.js",
+    jsbasic: "./src/jsbasic.js",
   },
   output: {
     filename: "[name].[contenthash].js",
@@ -107,6 +108,13 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash].css",
       chunkFilename: "[id].[contenthash].css",
+    }),
+
+    //Chunk jsbasic
+    new HtmlWebpackPlugin({
+      template: "./src/jsbasic.html",
+      filename: "./jsbasic.html",
+      chunks: ["jsbasic"],
     }),
 
     //Chunk dictionary
