@@ -15,6 +15,7 @@ module.exports = {
     slider: "./src/slider.js",
     dictionary: "./src/dictionary.js",
     jsbasic: "./src/jsbasic.js",
+    adcgame: "./src/adcgame.js",
   },
   output: {
     filename: "[name].[contenthash].js",
@@ -108,6 +109,13 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash].css",
       chunkFilename: "[id].[contenthash].css",
+    }),
+
+    //Chunk jsbasic
+    new HtmlWebpackPlugin({
+      template: "./src/adcgame.html",
+      filename: "./adcgame.html",
+      chunks: ["adcgame"],
     }),
 
     //Chunk jsbasic
