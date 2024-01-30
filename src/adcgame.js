@@ -1,5 +1,7 @@
 import "./adcgame.css";
 
+const eventListeners = [];
+
 const messageGroups = [
   {
     questions: [
@@ -35,11 +37,40 @@ function sample(array) {
   return array[Math.floor(Math.random() * array.length)];
 }
 
-function showQuestion(question) {
+function showQuestions() {
+  const wrapper = document.createElement("div");
+  wrapper.classList.add("questionsWrapper");
+  document.body.appendChild(wrapper);
+
+  let timeout = 2000;
+  const messageGroup = sample(messageGroups);
+
+  messageGroup.questions.forEach((question, i) => {
+    if (i == 0) {
+      showQuestion(wrapper, question);
+    } else if (i + 1 == messageGroup.questions.length) {
+      setTimeout(() => {
+        showQuestion(wrapper, question);
+        showAnswers(messageGroup.answers);
+      }, timeout);
+    } else {
+      setTimeout(() => {
+        showQuestion(wrapper, question);
+      }, timeout);
+
+      // timeout = timeout + 2000;
+      timeout += 2000;
+    }
+  });
+}
+
+function showQuestion(wrapper, question) {
+  removeListenerFromAnswer();
+
   const element = document.createElement("div");
   element.innerText = question;
   element.classList.add("question");
-  document.body.appendChild(element);
+  wrapper.appendChild(element);
 }
 
 function showAnswers(answers) {
@@ -52,33 +83,19 @@ function showAnswers(answers) {
     element.innerText = answer;
     element.classList.add("answer");
 
-    element.addEventListener("click", () => {
-      console.log("клик работает");
-    });
+    element.addEventListener("click", showQuestions);
+    eventListeners.push(element);
 
     wrapper.appendChild(element);
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  let timeout = 2000;
-  const messageGroup = sample(messageGroups);
-
-  messageGroup.questions.forEach((question, i) => {
-    if (i == 0) {
-      showQuestion(question);
-    } else if (i + 1 == messageGroup.questions.length) {
-      setTimeout(() => {
-        showQuestion(question);
-        showAnswers(messageGroup.answers);
-      }, timeout);
-    } else {
-      setTimeout(() => {
-        showQuestion(question);
-      }, timeout);
-
-      // timeout = timeout + 2000;
-      timeout += 2000;
-    }
+function removeListenerFromAnswer() {
+  eventListeners.forEach((element, i) => {
+    element.removeEventListener("click", showQuestions);
   });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  showQuestions();
 });
