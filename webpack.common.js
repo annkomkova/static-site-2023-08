@@ -112,10 +112,15 @@ module.exports = {
       chunkFilename: "[id].[contenthash].css",
     }),
 
-    //Chunk jsbasic
+    //Chunk select
     new HtmlWebpackPlugin({
       template: "./src/select.html",
       filename: "./select.html",
+      chunks: ["select"],
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/select2.html",
+      filename: "./select2.html",
       chunks: ["select"],
     }),
 
