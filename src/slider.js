@@ -13,7 +13,7 @@ function toggleAside() {
 }
 
 function slide(direction) {
-  const rail = document.querySelector("rail");
+  const rail = document.querySelector(".rail");
 
   if (direction === "next") {
     currentSlide++;
