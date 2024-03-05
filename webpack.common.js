@@ -17,6 +17,7 @@ module.exports = {
     jsbasic: "./src/jsbasic.js",
     adcgame: "./src/adcgame.js",
     select: "./src/select.js",
+    select2: "./src/select2.js",
   },
   output: {
     filename: "[name].[contenthash].js",
@@ -121,7 +122,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/select2.html",
       filename: "./select2.html",
-      chunks: ["select"],
+      chunks: ["select2"],
     }),
 
     //Chunk jsbasic
