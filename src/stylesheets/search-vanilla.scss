@@ -1,5 +1,6 @@
 body {
   font-family: "PT Root UI";
+  background-color: rgb(66, 66, 66);
 }
 
 .O_Search {
@@ -36,5 +37,61 @@ body {
     background-color: lightgray;
     color: grey;
     cursor: default;
+  }
+}
+
+.S_Content {
+  width: 100vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 40px;
+}
+
+.O_ContentItem {
+  width: 320px;
+  min-height: 350px;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: rgb(40, 40, 40);
+  font-family: Arial, Helvetica, sans-serif;
+
+  &.hidden {
+    display: none;
+  }
+
+  .A_ContentItemCover {
+    border-radius: 20px 20px 0 0;
+  }
+
+  .A_ContentItemTitle {
+    font-size: 21px;
+    padding: 0 10px;
+  }
+
+  .A_ContentItemDescription {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .C_ContentItemTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 0 10px 10px;
+
+    .A_ContentItemTag {
+      background-color: cornflowerblue;
+      color: white;
+      font-size: 12px;
+      line-height: 12px;
+      padding: 2px 5px;
+      border-radius: 12px;
+    }
   }
 }

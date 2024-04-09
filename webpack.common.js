@@ -98,6 +98,14 @@ module.exports = {
           from: path.resolve(__dirname, "src/share/"),
           to: path.resolve(__dirname, "dev_build/share"),
         },
+        {
+          from: path.resolve(__dirname, "src/images/colors/"),
+          to: path.resolve(__dirname, "dev_build/images/colors"),
+        },
+        {
+          from: path.resolve(__dirname, "src/images/colors/"),
+          to: path.resolve(__dirname, "docs/images/colors"),
+        },
       ],
     }),
     new CopyPlugin({
