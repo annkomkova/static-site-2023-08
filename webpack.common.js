@@ -18,6 +18,7 @@ module.exports = {
     adcgame: "./src/adcgame.js",
     select: "./src/select.js",
     select2: "./src/select2.js",
+    searchVanilla: "./src/search-vanilla.js",
   },
   output: {
     filename: "[name].[contenthash].js",
@@ -113,6 +114,12 @@ module.exports = {
       chunkFilename: "[id].[contenthash].css",
     }),
 
+    //Chunk searchVanilla
+    new HtmlWebpackPlugin({
+      template: "./src/search-vanilla.html",
+      filename: "./search-vanilla.html",
+      chunks: ["searchVanilla"],
+    }),
     //Chunk select
     new HtmlWebpackPlugin({
       template: "./src/select.html",
