@@ -19,6 +19,7 @@ module.exports = {
     select: "./src/select.js",
     select2: "./src/select2.js",
     searchVanilla: "./src/search-vanilla.js",
+    reactBasics: "./src/react-basics.jsx",
   },
   output: {
     filename: "[name].[contenthash].js",
@@ -122,6 +123,12 @@ module.exports = {
       chunkFilename: "[id].[contenthash].css",
     }),
 
+    //Chunk React
+    new HtmlWebpackPlugin({
+      template: "./src/react-basics.html",
+      filename: "./react-basics.html",
+      chunks: ["reactBasics"],
+    }),
     //Chunk searchVanilla
     new HtmlWebpackPlugin({
       template: "./src/search-vanilla.html",
