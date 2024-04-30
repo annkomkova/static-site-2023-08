@@ -18,6 +18,9 @@ module.exports = {
     adcgame: "./src/adcgame.js",
     select: "./src/select.js",
     select2: "./src/select2.js",
+    searchVanilla: "./src/search-vanilla.js",
+    reactBasics: "./src/react-basics.jsx",
+    narkomfin: "./src/narkomfin.js",
   },
   output: {
     filename: "[name].[contenthash].js",
@@ -97,6 +100,30 @@ module.exports = {
           from: path.resolve(__dirname, "src/share/"),
           to: path.resolve(__dirname, "dev_build/share"),
         },
+        {
+          from: path.resolve(__dirname, "src/images/colors/"),
+          to: path.resolve(__dirname, "dev_build/images/colors"),
+        },
+        {
+          from: path.resolve(__dirname, "src/images/colors/"),
+          to: path.resolve(__dirname, "docs/images/colors"),
+        },
+        {
+          from: path.resolve(__dirname, "src/model-narkomfin"),
+          to: path.resolve(__dirname, "dev_build/model-narkomfin"),
+        },
+        {
+          from: path.resolve(__dirname, "src/model-narkomfin"),
+          to: path.resolve(__dirname, "docs/model-narkomfin"),
+        },
+        {
+          from: path.resolve(__dirname, "src/model-drone"),
+          to: path.resolve(__dirname, "dev_build/model-drone"),
+        },
+        {
+          from: path.resolve(__dirname, "src/model-drone"),
+          to: path.resolve(__dirname, "docs/model-drone"),
+        },
       ],
     }),
     new CopyPlugin({
@@ -113,6 +140,24 @@ module.exports = {
       chunkFilename: "[id].[contenthash].css",
     }),
 
+    //Chunk Three
+    new HtmlWebpackPlugin({
+      template: "./src/narkomfin.html",
+      filename: "./narkomfin.html",
+      chunks: ["narkomfin"],
+    }),
+    //Chunk React
+    new HtmlWebpackPlugin({
+      template: "./src/react-basics.html",
+      filename: "./react-basics.html",
+      chunks: ["reactBasics"],
+    }),
+    //Chunk searchVanilla
+    new HtmlWebpackPlugin({
+      template: "./src/search-vanilla.html",
+      filename: "./search-vanilla.html",
+      chunks: ["searchVanilla"],
+    }),
     //Chunk select
     new HtmlWebpackPlugin({
       template: "./src/select.html",
