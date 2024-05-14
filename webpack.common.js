@@ -21,6 +21,7 @@ module.exports = {
     searchVanilla: "./src/search-vanilla.js",
     reactBasics: "./src/react-basics.jsx",
     narkomfin: "./src/narkomfin.js",
+    searchBar: "./src/searchBar.jsx",
   },
   output: {
     filename: "[name].[contenthash].js",
@@ -216,7 +217,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.html",
       filename: "./index.html",
-      chunks: ["index"],
+      chunks: ["index", "searchBar"],
     }),
     new HtmlWebpackPlugin({
       template: "./src/about.html",
@@ -258,6 +259,14 @@ module.exports = {
       {
         path: path.join(__dirname, "./src/partials/analytics.html"),
         location: "analytics",
+        template_filename: "*",
+        priority: "replace",
+      },
+    ]),
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, "./src/partials/searchbar.html"),
+        location: "searchbar",
         template_filename: "*",
         priority: "replace",
       },
