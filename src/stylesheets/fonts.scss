@@ -32,3 +32,18 @@
   font-weight: 300;
   font-style: normal;
 }
+@font-face {
+  font-family: "Loos";
+  src: url("fonts/Loos.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+.mainMenu {
+  width: 324px;
+  height: 100vh;
+  border-right: 1px solid black;
+  position: absolute;
+  top: 0;
+  left: 0;
+}

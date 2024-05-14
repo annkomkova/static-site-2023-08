@@ -6,7 +6,33 @@ import { OrbitControls } from "three/examples/jsm/Addons.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   initThree();
+  initNavigation();
 });
+
+function initNavigation() {
+  const links = document.querySelectorAll(".mainMenu a");
+  const content = document.querySelector(".content");
+  const closeButton = document.querySelector(".closeButtont");
+  const logo = document.querySelector(".header");
+
+  links.forEach((link) => {
+    link.addEventListener("click", () => {
+      let linkId = link.href.split("#")[1];
+
+      content.classList.remove("none");
+      logo.classList.add("none");
+      document.getElementById(linkId).classList.remove("none");
+      document.querySelector(`.${linkId}`).classList.add("active");
+
+      closeButton.addEventListener("click", () => {
+        content.classList.add("none");
+        logo.classList.remove("none");
+        document.getElementById(linkId).classList.add("none");
+        document.querySelector(`.${linkId}`).classList.remove("active");
+      });
+    });
+  });
+}
 
 function initThree() {
   const container = document.querySelector(".model");
