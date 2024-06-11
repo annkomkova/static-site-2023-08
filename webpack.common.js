@@ -12,16 +12,16 @@ module.exports = {
     index: "./src/index.js",
     theory: "./src/theory.js",
     adaptive: "./src/adaptive.js",
-    slider: "./src/slider.js",
     dictionary: "./src/dictionary.js",
     jsbasic: "./src/jsbasic.js",
-    adcgame: "./src/adcgame.js",
     select: "./src/select.js",
     select2: "./src/select2.js",
+    slider: "./src/slider.js",
     searchVanilla: "./src/search-vanilla.js",
     reactBasics: "./src/react-basics.jsx",
     narkomfin: "./src/narkomfin.js",
-    searchBar: "./src/searchBar.jsx",
+    menuBar: "./src/menubar.jsx",
+    search: "./src/search.jsx",
   },
   output: {
     filename: "[name].[contenthash].js",
@@ -79,7 +79,7 @@ module.exports = {
         type: "asset/source",
       },
       {
-        test: /\.(png|svg|jpg|jpeg|webp)$/i,
+        test: /\.(png|svg|jpeg|jpg|webp)$/i,
         type: "asset/resource",
         generator: {
           filename: "images/[name].[hash][ext][query]",
@@ -97,10 +97,10 @@ module.exports = {
   plugins: [
     new CopyPlugin({
       patterns: [
-        {
-          from: path.resolve(__dirname, "src/share/"),
-          to: path.resolve(__dirname, "dev_build/share"),
-        },
+        // {
+        //   from: path.resolve(__dirname, 'src/share/'),
+        //   to: path.resolve(__dirname, 'dev_build/share')
+        // },
         {
           from: path.resolve(__dirname, "src/images/colors/"),
           to: path.resolve(__dirname, "dev_build/images/colors"),
@@ -127,39 +127,25 @@ module.exports = {
         },
       ],
     }),
-    new CopyPlugin({
-      patterns: [
-        {
-          from: path.resolve(__dirname, "src/share/"),
-          to: path.resolve(__dirname, "docs/share"),
-        },
-      ],
-    }),
 
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash].css",
       chunkFilename: "[id].[contenthash].css",
     }),
 
-    //Chunk Three
-    new HtmlWebpackPlugin({
-      template: "./src/narkomfin.html",
-      filename: "./narkomfin.html",
-      chunks: ["narkomfin"],
-    }),
-    //Chunk React
+    // React
     new HtmlWebpackPlugin({
       template: "./src/react-basics.html",
       filename: "./react-basics.html",
       chunks: ["reactBasics"],
     }),
-    //Chunk searchVanilla
+    // Three
     new HtmlWebpackPlugin({
-      template: "./src/search-vanilla.html",
-      filename: "./search-vanilla.html",
-      chunks: ["searchVanilla"],
+      template: "./src/narkomfin.html",
+      filename: "./narkomfin.html",
+      chunks: ["narkomfin"],
     }),
-    //Chunk select
+    // select
     new HtmlWebpackPlugin({
       template: "./src/select.html",
       filename: "./select.html",
@@ -171,70 +157,75 @@ module.exports = {
       chunks: ["select2"],
     }),
 
-    //Chunk jsbasic
-    new HtmlWebpackPlugin({
-      template: "./src/adcgame.html",
-      filename: "./adcgame.html",
-      chunks: ["adcgame"],
-    }),
-
-    //Chunk jsbasic
+    // jsbasic chunk
     new HtmlWebpackPlugin({
       template: "./src/jsbasic.html",
       filename: "./jsbasic.html",
       chunks: ["jsbasic"],
     }),
 
-    //Chunk dictionary
-    new HtmlWebpackPlugin({
-      template: "./src/dictionary.html",
-      filename: "./dictionary.html",
-      chunks: ["dictionary"],
-    }),
-
-    //Chunk slider
+    // slider chunk
     new HtmlWebpackPlugin({
       template: "./src/slider.html",
       filename: "./slider.html",
       chunks: ["slider"],
     }),
 
-    //Chunk theory
+    // Dictionary chunk
     new HtmlWebpackPlugin({
-      template: "./src/theory.html",
-      filename: "./theory.html",
-      chunks: ["theory"], // Дублируем имя Chunks в массив, чтоб он подгружал
+      template: "./src/dictionary.html",
+      filename: "./dictionary.html",
+      chunks: ["dictionary"],
     }),
 
-    //Chunk adaptive
+    // Adaptive chunk
     new HtmlWebpackPlugin({
       template: "./src/adaptive.html",
       filename: "./adaptive.html",
-      chunks: ["adaptive"], // Дублируем имя Chunks в массив, чтоб он подгружал
+      chunks: ["adaptive"],
     }),
 
-    // Index
+    // search
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
-      filename: "./index.html",
-      chunks: ["index", "searchBar"],
+      template: "./src/search-vanilla.html",
+      filename: "./search-vanilla.html",
+      chunks: ["searchVanilla", "menuBar"],
     }),
+    new HtmlWebpackPlugin({
+      template: "./src/search.html",
+      filename: "./search.html",
+      chunks: ["search", "menuBar"],
+    }),
+
+    // Theory chunk
+    new HtmlWebpackPlugin({
+      template: "./src/theory.html",
+      filename: "./theory.html",
+      chunks: ["theory"],
+    }),
+
+    // Index chunk
+    new HtmlWebpackPlugin({
+      template: "./src/index.ejs",
+      filename: "./index.html",
+      chunks: ["index", "menuBar", "search"],
+    }),
+
+    //Section
     new HtmlWebpackPlugin({
       template: "./src/about.html",
       filename: "./about.html",
       chunks: ["index"],
     }),
-
-    //Section
     new HtmlWebpackPlugin({
-      template: "./src/spaceobjects.html",
+      template: "./src/spaceobjects.ejs",
       filename: "./spaceobjects.html",
-      chunks: ["index"],
+      chunks: ["index", "menuBar"],
     }),
     new HtmlWebpackPlugin({
-      template: "./src/spaceships.html",
+      template: "./src/spaceships.ejs",
       filename: "./spaceships.html",
-      chunks: ["index"],
+      chunks: ["index", "menuBar"],
     }),
     new HtmlWebpackPlugin({
       template: "./src/responsive-images.html",
@@ -244,14 +235,14 @@ module.exports = {
 
     // Article
     new HtmlWebpackPlugin({
-      template: "./src/spaceships/buran.html",
-      filename: "./spaceships/buran.html",
-      chunks: ["index"],
+      template: "./src/spaceobjects/moon.ejs",
+      filename: "./spaceobjects/moon.html",
+      chunks: ["index", "menuBar"],
     }),
     new HtmlWebpackPlugin({
-      template: "./src/spaceobjects/moon.html",
-      filename: "./spaceobjects/moon.html",
-      chunks: ["index"],
+      template: "./src/spaceships/buran.ejs",
+      filename: "./spaceships/buran.html",
+      chunks: ["index", "menuBar"],
     }),
 
     // Partials
@@ -259,14 +250,6 @@ module.exports = {
       {
         path: path.join(__dirname, "./src/partials/analytics.html"),
         location: "analytics",
-        template_filename: "*",
-        priority: "replace",
-      },
-    ]),
-    new HtmlWebpackPartialsPlugin([
-      {
-        path: path.join(__dirname, "./src/partials/menubar.html"),
-        location: "menubar",
         template_filename: "*",
         priority: "replace",
       },

@@ -1,8 +1,7 @@
-import React from "react";
+import React from 'react'
 
 export default class A_Title extends React.Component {
   render() {
-    const { text } = this.props;
-    return <div className="A_Title">{text}</div>;
+    return <h1 className="A_Title">{this.props.name}</h1>
   }
 }

@@ -51,9 +51,17 @@ body.slider {
           width: 6640px;
           height: 664px;
 
-          img {
+          img,
+          div {
             width: 664px;
             height: 664px;
+
+            &:nth-of-type(odd) {
+              background-color: cornflowerblue;
+            }
+            &:nth-of-type(even) {
+              background-color: coral;
+            }
           }
         }
       }
@@ -103,6 +111,13 @@ body.slider {
     .postTeaser {
       width: 320px;
       height: 320px;
+
+      &:nth-of-type(odd) {
+        background-color: cornflowerblue;
+      }
+      &:nth-of-type(even) {
+        background-color: coral;
+      }
 
       img {
         width: 100%;

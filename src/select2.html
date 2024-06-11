@@ -4,45 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <analytics></analytics>
   </head>
   <body>
     <nav class="S_navigation">
-      <!-- свитч для смена темы -->
+      <!-- multi select-->
+      <div class="O_multiSelect">
+        <div class="M_multiSelectField">
+          <div class="C_multiSelectInput" contenteditable="true"></div>
+          <div class="A_multiSelectDropdownButton">V</div>
+        </div>
+        <div class="C_multiSelectOptionList"></div>
+      </div>
+
+      <!-- select-->
+      <div class="O_Select">
+        <div class="M_selectField">
+          <input class="A_selectInput" type="text" placeholder="type text" />
+          <div class="A_selectDropdownButton">V</div>
+        </div>
+        <div class="C_selectOptionList"></div>
+      </div>
+
+      <!-- toggle switch -->
       <label class="switch">
         <input type="checkbox" />
         <span class="slider"></span>
       </label>
-
-      <!-- select -->
-      <div class="O_Select">
-        <div class="M_SelectField">
-          <input type="text" class="A_SelectInput" />
-          <div class="A_SelectDropdownButton">V</div>
-        </div>
-        <div class="C_SelectOptionList"></div>
-      </div>
-
-      <!-- multiselect -->
-      <div class="O_MultiSelect">
-        <div class="M_MultiSelectField">
-          <div class="C_MultiSelectInput" contenteditable="true"></div>
-          <div class="A_MultiSelectDropdownButton">V</div>
-        </div>
-        <div class="C_MultiSelectOptionList"></div>
-      </div>
     </nav>
 
-    <!-- карточки -->
-    <div class="S_Content">
+    <div class="S_content">
       <div
         class="O_contentCard"
-        data-tags="бежевый,серый,кофейный,коричневый,белый,монохровная палитра"
+        data-tags="бежевый,коричневый,серый,монохромная палитра"
       >
         <img
           class="A_contentCardCover"
           src="./images/colors/cvetovaya-palitra-1729.webp"
-          alt=""
+          alt="цветовая палитра 1729"
         />
         <h2 class="A_contentCardTitle">Цветовая палитра 1729</h2>
         <p class="A_contentCardDescription">
@@ -53,22 +51,19 @@
           пейзажи освежают и способны создать эффект увлажнения воздуха, который
           можно ощутимо усилить при помощи комнатного фонтана с морской водой.
         </p>
-
         <div class="C_contentCardTags">
           <div class="A_contentCardTag">бежевый</div>
-          <div class="A_contentCardTag">серый</div>
-          <div class="A_contentCardTag">кофейный</div>
           <div class="A_contentCardTag">коричневый</div>
-          <div class="A_contentCardTag">белый</div>
+          <div class="A_contentCardTag">серый</div>
           <div class="A_contentCardTag">монохромная палитра</div>
         </div>
       </div>
 
-      <div class="O_contentCard" data-tags="серый,чёрный,белый,жёлтый">
+      <div class="O_contentCard" data-tags="бежевый,жёлтый,серый,белый">
         <img
           class="A_contentCardCover"
           src="./images/colors/cvetovaya-palitra-1752.webp"
-          alt=""
+          alt="цветовая палитра 1752"
         />
         <h2 class="A_contentCardTitle">Цветовая палитра 1752</h2>
         <p class="A_contentCardDescription">
@@ -78,22 +73,22 @@
           делового стиля одежды, оформления рабочего кабинета человека, который
           любит спокойствие.
         </p>
-        <div class="C_contentCardTags">
-          <div class="A_contentCardTag">серый</div>
-          <div class="A_contentCardTag">чёрный</div>
-          <div class="A_contentCardTag">белый</div>
+        <!-- <div class="C_contentCardTags">
+          <div class="A_contentCardTag">бежевый</div>
           <div class="A_contentCardTag">жёлтый</div>
-        </div>
+          <div class="A_contentCardTag">серый</div>
+          <div class="A_contentCardTag">белый</div>
+        </div> -->
       </div>
 
       <div
         class="O_contentCard"
-        data-tags="бежевый,кофейный,коричневый,белый,оранжевый,жёлтый"
+        data-tags="чёрный,коричневый,серый,оранжевый,жёлтый"
       >
         <img
           class="A_contentCardCover"
           src="./images/colors/cvetovaya-palitra-1753.webp"
-          alt=""
+          alt="цветовая палитра 1753"
         />
         <h2 class="A_contentCardTitle">Цветовая палитра 1753</h2>
         <p class="A_contentCardDescription">
@@ -105,19 +100,18 @@
         </p>
         <div class="C_contentCardTags">
           <div class="A_contentCardTag">коричневый</div>
-          <div class="A_contentCardTag">чёрный</div>
-          <div class="A_contentCardTag">бежевый</div>
           <div class="A_contentCardTag">жёлтый</div>
-          <div class="A_contentCardTag">кофейный</div>
+          <div class="A_contentCardTag">серый</div>
           <div class="A_contentCardTag">оранжевый</div>
+          <div class="A_contentCardTag">чёрный</div>
         </div>
       </div>
 
-      <div class="O_contentCard" data-tags="фиолетовый,серый,чёрный">
+      <div class="O_contentCard" data-tags="фиолетовый,серый,Чёрный">
         <img
           class="A_contentCardCover"
           src="./images/colors/cvetovaya-palitra-1754.webp"
-          alt=""
+          alt="цветовая палитра 1754"
         />
         <h2 class="A_contentCardTitle">Цветовая палитра 1754</h2>
         <p class="A_contentCardDescription">
@@ -136,12 +130,12 @@
 
       <div
         class="O_contentCard"
-        data-tags="бежевый,кофейный,коричневый,голубой,синий"
+        data-tags="бежевый,коричневый,серый,голубой,синий"
       >
         <img
           class="A_contentCardCover"
           src="./images/colors/cvetovaya-palitra-1832.webp"
-          alt=""
+          alt="цветовая палитра 1832"
         />
         <h2 class="A_contentCardTitle">Цветовая палитра 1832</h2>
         <p class="A_contentCardDescription">
@@ -153,23 +147,22 @@
           в стиле casual.
         </p>
         <div class="C_contentCardTags">
-          <div class="A_contentCardTag">коричневый</div>
           <div class="A_contentCardTag">бежевый</div>
           <div class="A_contentCardTag">серый</div>
+          <div class="A_contentCardTag">коричневый</div>
           <div class="A_contentCardTag">голубой</div>
           <div class="A_contentCardTag">синий</div>
-          <div class="A_contentCardTag">кофейный</div>
         </div>
       </div>
 
       <div
         class="O_contentCard"
-        data-tags="бежевый,оранжевый,розовый,фиолетовый"
+        data-tags="бежевый,чёрный,фиолетовый,розовый,оранжевый"
       >
         <img
           class="A_contentCardCover"
           src="./images/colors/cvetovaya-palitra-1834.webp"
-          alt=""
+          alt="цветовая палитра 1834"
         />
         <h2 class="A_contentCardTitle">Цветовая палитра 1834</h2>
         <p class="A_contentCardDescription">
@@ -181,18 +174,19 @@
           света.
         </p>
         <div class="C_contentCardTags">
-          <div class="A_contentCardTag">оранжевый</div>
-          <div class="A_contentCardTag">бежевый</div>
-          <div class="A_contentCardTag">розовый</div>
+          <div class="A_contentCardTag">чёрный</div>
           <div class="A_contentCardTag">фиолетовый</div>
+          <div class="A_contentCardTag">розовый</div>
+          <div class="A_contentCardTag">орнанжевый</div>
+          <div class="A_contentCardTag">бежевый</div>
         </div>
       </div>
 
-      <div class="O_contentCard" data-tags="розовый,лиловый,зелёный,чёрный">
+      <div class="O_contentCard" data-tags="чёрный,зелёный,розовый,лиловый">
         <img
           class="A_contentCardCover"
           src="./images/colors/cvetovaya-palitra-1836.webp"
-          alt=""
+          alt="цветовая палитра 1836"
         />
         <h2 class="A_contentCardTitle">Цветовая палитра 1836</h2>
         <p class="A_contentCardDescription">
@@ -204,18 +198,18 @@
           гостиной.
         </p>
         <div class="C_contentCardTags">
+          <div class="A_contentCardTag">чёрный</div>
+          <div class="A_contentCardTag">зелёный</div>
           <div class="A_contentCardTag">розовый</div>
           <div class="A_contentCardTag">лиловый</div>
-          <div class="A_contentCardTag">зелёный</div>
-          <div class="A_contentCardTag">чёрный</div>
         </div>
       </div>
 
-      <div class="O_contentCard" data-tags="серый,Зелёный,оранжевый">
+      <div class="O_contentCard" data-tags="оранжевый,коричневый,серый,зелёный">
         <img
           class="A_contentCardCover"
           src="./images/colors/cvetovaya-palitra-1838.webp"
-          alt=""
+          alt="цветовая палитра 1838"
         />
         <h2 class="A_contentCardTitle">Цветовая палитра 1838</h2>
         <p class="A_contentCardDescription">
@@ -226,9 +220,10 @@
           различного назначения и декора офисных/производственных помещений.
         </p>
         <div class="C_contentCardTags">
-          <div class="A_contentCardTag">оранжевый</div>
-          <div class="A_contentCardTag">зелёный</div>
           <div class="A_contentCardTag">серый</div>
+          <div class="A_contentCardTag">зелёный</div>
+          <div class="A_contentCardTag">коричневый</div>
+          <div class="A_contentCardTag">оранжевый</div>
         </div>
       </div>
     </div>

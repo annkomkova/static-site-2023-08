@@ -1,1 +1,1 @@
-import "./adaptive.css";
+import './adaptive.css'

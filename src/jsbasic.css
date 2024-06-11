@@ -1,24 +1,24 @@
-* {
-  box-sizing: border-box;
-}
 div {
   width: 150px;
   height: 150px;
-  margin: 10px;
+  margin: 6px;
   display: inline-block;
 }
-.red {
+#red {
   background-color: red;
 }
-.blue {
+#blue {
   background-color: navy;
 }
 .gold {
   background-color: goldenrod;
 }
+.green {
+  background-color: green;
+}
 .border {
   border-radius: 100px;
 }
-.none {
-  display: none;
+.opacity {
+  opacity: 0.5;
 }

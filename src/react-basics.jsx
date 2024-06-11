@@ -1,12 +1,11 @@
-import "./react-basics.css";
+import './react-basics.css'
 
-import React from "react";
-import { createRoot } from "react-dom/client";
+import { createRoot } from 'react-dom/client'
+import React from 'react'
 
-import O_Shedule from "./react-basics/O_Shedule.jsx";
+import O_Container from './react-basics/O_Container.jsx'
 
-document.body.innerHTML = '<div id="app"></div>';
+document.body.innerHTML = '<div id="app"></div>'
 
-const root = createRoot(document.getElementById("app"));
-
-root.render(<O_Shedule />);
+const root = createRoot(document.querySelector('#app'))
+root.render(<O_Container />)
