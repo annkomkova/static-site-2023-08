@@ -1,66 +1,23 @@
 body.article {
   background-color: var(--white);
-  font-family: "PT Root UI", Arial, Helvetica, sans-serif;
-
+  font-family: 'PT Root UI';
   article {
     width: 600px;
     margin: 0 auto;
 
-    img {
-      width: 100%;
-      margin-top: 20px;
-    }
     h1,
     h2,
     h3 {
       font-weight: 700;
     }
+
     h1 {
       font-size: 48px;
     }
-    h2 {
-      font-size: 30px;
-      margin-top: 36px;
-    }
-    h3 {
-      font-size: 20px;
-      margin-top: 28px;
-    }
-    p,
-    li {
-      font-size: var(--fontSize);
-      margin-top: 10px;
-      line-height: 1.4;
-      font-weight: 400;
-    }
-    p.lead {
-      width: 80%;
-      font-weight: 700;
-      font-size: 30px;
-      text-transform: uppercase;
-      text-align: center;
-      margin: 40px auto;
-    }
-    ul {
-      list-style-type: disc;
-      padding-left: 20px;
-    }
-    blockquote {
-      background-color: var(--light);
-      padding: 20px;
-      margin-top: 10px;
-      font-weight: 400;
 
-      p:first-child {
-        margin: 0;
-      }
-      cite {
-        display: block;
-        margin-top: 16px;
-        text-align: right;
-        font-size: 14px;
-        font-weight: 500;
-      }
+    img {
+      width: 100%;
+      margin: 20px auto;
     }
   }
 }

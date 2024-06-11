@@ -1,1 +1,1 @@
-import "./theory.css";
+import './theory.css'

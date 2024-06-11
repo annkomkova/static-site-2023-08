@@ -1,1 +1,1 @@
-import "./dictionary.css";
+import './dictionary.css'
