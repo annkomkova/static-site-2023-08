@@ -1,0 +1,39 @@
+.S_LandingContent {
+  width: 80%;
+  margin: 0 auto;
+
+  .O_LandingCategory {
+    margin-top: 20px;
+    h2 {
+      text-transform: capitalize;
+      font-family: Loos, sans-serif;
+      font-weight: 600;
+      font-size: 32px;
+      margin: 20px 0;
+    }
+    .W_LandingPostElements {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      .M_LandingPostTeaser {
+        width: 25%;
+        border: 1px solid black;
+        border-radius: 20px;
+        text-decoration: none;
+
+        .A_Image {
+          width: 100%;
+        }
+        .A_Text {
+          font-family: Loos, sans-serif;
+          font-size: 18px;
+          text-align: center;
+          text-decoration: none;
+          color: black;
+          margin: 6px;
+        }
+      }
+    }
+  }
+}
